@@ -1,0 +1,1333 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font:
+          14px -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: #fff;
+        color: #000;
+      }
+      img {
+        max-width: 100%;
+      }
+      [hidden]:not([hidden="until-found" i]) {
+        display: none !important;
+      }
+    </style>
+    <title>Subash | Order-Ready Stores for Instagram Sellers</title>
+    <meta name="description" content="Turn your DMs into complete WhatsApp orders. Simple online stores for Instagram and Facebook sellers. 3 demo stores, live in 7 days.">
+    <link rel="canonical" href="https://subash-portfolio.pages.dev/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Subash">
+    <meta property="og:title" content="Turn your DMs into orders that arrive complete">
+    <meta property="og:description" content="Customers pick items. You get one clean WhatsApp order. See 3 demo stores.">
+    <meta property="og:url" content="https://subash-portfolio.pages.dev/">
+    <meta property="og:image" content="https://subash-portfolio.pages.dev/preview.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Turn your DMs into orders that arrive complete">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Turn your DMs into orders that arrive complete">
+    <meta name="twitter:description" content="Customers pick items. You get one clean WhatsApp order. See 3 demo stores.">
+    <meta name="twitter:image" content="https://subash-portfolio.pages.dev/preview.jpg">
+    <meta name="theme-color" content="#0b7a55" />
+    <meta name="claude:viewport-fit-sides" content="cover" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b7a55'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Georgia,serif' font-size='48' font-weight='bold' fill='%23f3b52c'%3ES%3C/text%3E%3Ccircle cx='48' cy='15' r='4' fill='%23ffffff'/%3E%3C/svg%3E" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    />
+    <style>
+      /* Layout: left-aligned hero with a torn order slip as the one bold element; everything else is quiet, wide-margin sections. */
+      :root {
+        --bg: #f1f3ee;
+        --surface: #ffffff;
+        --fg: #14201a;
+        --muted: #55645b;
+        --line: #d5dbd2;
+        --accent: #0b7a55;
+        --accent-ink: #ffffff;
+        --mark: #f3b52c;
+        --slip: #fffdf6;
+        --slip-ink: #1d2a22;
+        --display: "Bricolage Grotesque";
+        --body: "DM Sans";
+        --mono: "IBM Plex Mono";
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0e1511;
+          --surface: #16201a;
+          --fg: #e9efe9;
+          --muted: #9baaa0;
+          --line: #263329;
+          --accent: #3cc590;
+          --accent-ink: #06180f;
+          --mark: #e7b13a;
+          --slip: #f4efe0;
+          --slip-ink: #1d2a22;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #0e1511;
+        --surface: #16201a;
+        --fg: #e9efe9;
+        --muted: #9baaa0;
+        --line: #263329;
+        --accent: #3cc590;
+        --accent-ink: #06180f;
+        --mark: #e7b13a;
+        --slip: #f4efe0;
+        --slip-ink: #1d2a22;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          17px/1.6 var(--body),
+          system-ui,
+          sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      a {
+        color: inherit;
+      }
+      .in {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-right: max(16px, env(safe-area-inset-right, 0px));
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--display), system-ui, sans-serif;
+        text-wrap: balance;
+        margin: 0;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      h1 {
+        font-weight: 800;
+        font-size: clamp(40px, 7.4vw, 76px);
+      }
+      h2 {
+        font-weight: 800;
+        font-size: clamp(30px, 4.6vw, 46px);
+      }
+      h3 {
+        font-weight: 600;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+      }
+      p {
+        margin: 0;
+      }
+      .eyebrow {
+        font:
+          500 12px/1 var(--mono),
+          monospace;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 16px;
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      nav.top .in {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding-block: 18px;
+      }
+      .brand {
+        font:
+          800 20px/1 var(--display),
+          sans-serif;
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+      .brand span {
+        color: var(--accent);
+      }
+      nav.top ul {
+        display: flex;
+        gap: 22px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+      }
+      nav.top a {
+        text-decoration: none;
+        color: var(--muted);
+      }
+      nav.top a:hover {
+        color: var(--fg);
+      }
+      @media (max-width: 640px) {
+        nav.top ul li:not(:last-child) {
+          display: none;
+        }
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 22px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 16px;
+        border: 2px solid var(--fg);
+        color: var(--fg);
+        background: transparent;
+      }
+      .btn.pri {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-ink);
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn.wa {
+        background: #1fa855;
+        border-color: #1fa855;
+        color: #fff;
+      }
+
+      .hero .in {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: 56px;
+        align-items: center;
+        padding-block: clamp(24px, 5vw, 64px) clamp(48px, 7vw, 96px);
+      }
+      .hero .lead {
+        font-size: 19px;
+        color: var(--muted);
+        max-width: 50ch;
+        margin-top: 22px;
+      }
+      .tagline {
+        font:
+          700 18px/1.3 var(--display),
+          sans-serif;
+        color: var(--accent);
+        margin-top: 14px;
+      }
+      .ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+      .mark {
+        background: linear-gradient(
+          transparent 62%,
+          var(--mark) 62% 92%,
+          transparent 92%
+        );
+        padding: 0 0.06em;
+      }
+
+      .slipwrap {
+        justify-self: center;
+        width: min(100%, 380px);
+        transform: rotate(1.6deg);
+      }
+      .slip {
+        background: var(--slip);
+        color: var(--slip-ink);
+        font:
+          13px/1.55 var(--mono),
+          monospace;
+        padding: 22px 22px 30px;
+        -webkit-mask:
+          linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,
+          conic-gradient(
+              from -45deg at bottom,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            bottom/18px 9px repeat-x;
+        mask:
+          linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,
+          conic-gradient(
+              from -45deg at bottom,
+              #0000,
+              #000 1deg 89deg,
+              #0000 90deg
+            )
+            bottom/18px 9px repeat-x;
+        filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.18));
+      }
+      .slipwrap {
+        filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.22));
+      }
+      .slip {
+        filter: none;
+      }
+      .slip .hd {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        border-bottom: 1px dashed #9aa79d;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+      .slip .tt {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+      }
+      .slip hr {
+        border: 0;
+        border-top: 1px dashed #9aa79d;
+        margin: 10px 0;
+      }
+      .slip .ok {
+        margin-top: 12px;
+        background: #1d2a22;
+        color: #fffdf6;
+        padding: 8px 10px;
+        border-radius: 4px;
+        font-weight: 500;
+      }
+      .slipcap {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 18px;
+        text-align: center;
+        transform: rotate(-1.6deg);
+      }
+
+      section {
+        padding-block: clamp(56px, 8vw, 104px);
+      }
+      section.alt {
+        background: var(--surface);
+        border-block: 1px solid var(--line);
+      }
+      .head {
+        max-width: 62ch;
+        margin-bottom: 44px;
+      }
+      .head p {
+        color: var(--muted);
+        margin-top: 16px;
+        font-size: 18px;
+      }
+
+      .pains {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: 0;
+        border-top: 2px solid var(--fg);
+      }
+      .pain {
+        padding: 24px 24px 28px 0;
+        border-bottom: 1px solid var(--line);
+        min-width: 0;
+      }
+      .pain .before {
+        font:
+          500 13px/1.4 var(--mono),
+          monospace;
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-color: var(--accent);
+      }
+      .pain h3 {
+        margin: 10px 0 10px;
+      }
+      .pain p {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .demos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+        gap: 24px;
+      }
+      .demo {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        text-decoration: none;
+      }
+      section.alt .demo {
+        background: var(--bg);
+      }
+      .shot {
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+      }
+      .shot .lbl {
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+      .demo .tx {
+        padding: 20px 22px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+      }
+      .demo .tx p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .demo .tx .go {
+        margin-top: auto;
+        font-weight: 700;
+        color: var(--accent);
+        padding-top: 8px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .tags span {
+        font:
+          500 11px/1 var(--mono),
+          monospace;
+        border: 1px solid var(--line);
+        padding: 6px 8px;
+        border-radius: 99px;
+        color: var(--muted);
+      }
+      .demo .shot img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .demo .shot .lbl {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.94);
+        color: #14201a;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        font-family: inherit;
+        font-style: normal;
+        padding: 6px 11px;
+        border-radius: 99px;
+      }
+      @media (max-width: 640px) {
+        .demo .shot .lbl {
+          top: 8px;
+          left: 8px;
+          font-size: 10px;
+          padding: 4px 8px;
+        }
+        .demo .shot img {
+          object-position: center bottom;
+        }
+      }
+      .demo:hover {
+        border-color: var(--accent);
+      }
+      .s1 {
+        background: linear-gradient(135deg, #c4476c, #f7d7df);
+      }
+      .s1 .lbl {
+        font-family: "Bodoni Moda", Georgia, serif;
+        font-style: italic;
+        font-size: 34px;
+        color: #fff;
+        letter-spacing: 0.02em;
+      }
+      .s2 {
+        background: radial-gradient(circle at 50% 40%, #21584a, #0f2a24 70%);
+      }
+      .s2 .lbl {
+        font-family: Georgia, serif;
+        font-size: 26px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #d9b25f;
+      }
+      .s3 {
+        background: linear-gradient(135deg, #fde2d4, #fbe9b7);
+      }
+      .s3 .lbl {
+        font-family: Georgia, serif;
+        font-size: 32px;
+        color: #c8402a;
+      }
+      .note {
+        font-size: 14px;
+        color: var(--muted);
+        margin-top: 22px;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+        gap: 20px;
+        counter-reset: s;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .flow li {
+        counter-increment: s;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 24px;
+        min-width: 0;
+      }
+      .flow li::before {
+        content: counter(s);
+        font:
+          800 44px/1 var(--display),
+          sans-serif;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 12px;
+      }
+      .flow p {
+        color: var(--muted);
+        font-size: 16px;
+        margin-top: 8px;
+      }
+
+      .prices {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+        gap: 18px;
+      }
+      .plan {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 26px 24px;
+        background: var(--bg);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-width: 0;
+      }
+      .plan.best {
+        border: 2px solid var(--accent);
+        position: relative;
+      }
+      .plan.best::after {
+        content: "Most chosen";
+        position: absolute;
+        top: -13px;
+        left: 20px;
+        background: var(--accent);
+        color: var(--accent-ink);
+        font:
+          500 11px/1 var(--mono),
+          monospace;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 6px 10px;
+        border-radius: 99px;
+      }
+      .plan .pr {
+        font:
+          800 34px/1 var(--display),
+          sans-serif;
+        letter-spacing: -0.02em;
+        font-variant-numeric: tabular-nums;
+      }
+      .plan .pr small {
+        font:
+          500 13px/1 var(--mono),
+          monospace;
+        color: var(--muted);
+        letter-spacing: 0;
+        margin-right: 6px;
+      }
+      .plan .pr small.per {
+        margin: 0 0 0 4px;
+      }
+      .plan ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+      .plan li {
+        padding-left: 22px;
+        position: relative;
+      }
+      .plan li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 0.55em;
+        width: 10px;
+        height: 6px;
+        border-left: 2px solid var(--accent);
+        border-bottom: 2px solid var(--accent);
+        transform: rotate(-45deg) translateY(-3px);
+      }
+      .early {
+        margin-top: 26px;
+        border-left: 4px solid var(--mark);
+        padding: 6px 0 6px 18px;
+        max-width: 70ch;
+      }
+      .early b {
+        font-weight: 700;
+      }
+
+      .terms {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+        gap: 24px 40px;
+      }
+      .terms div {
+        border-top: 2px solid var(--fg);
+        padding-top: 14px;
+        min-width: 0;
+      }
+      .terms h3 {
+        font-size: 19px;
+        margin-bottom: 6px;
+      }
+      .terms p {
+        color: var(--muted);
+        font-size: 15.5px;
+      }
+
+      .days {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-left: 2px solid var(--line);
+        margin-left: 6px;
+      }
+      .days li {
+        display: grid;
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 16px;
+        padding: 0 0 26px 24px;
+        position: relative;
+      }
+      .days li::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 6px;
+        width: 12px;
+        height: 12px;
+        border-radius: 99px;
+        background: var(--accent);
+      }
+      .days .d {
+        font:
+          500 13px/1.6 var(--mono),
+          monospace;
+        color: var(--accent);
+        padding-top: 1px;
+      }
+      .days p {
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .days b {
+        color: var(--fg);
+        display: block;
+        font-size: 17px;
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 48px;
+      }
+      @media (max-width: 760px) {
+        .hero .in,
+        .about {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .hero .in {
+          gap: 40px;
+        }
+        .slipwrap {
+          justify-self: start;
+        }
+      }
+      .built {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 14px;
+      }
+      .built li {
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+        font-size: 16px;
+        color: var(--muted);
+      }
+      .built b {
+        color: var(--fg);
+        display: block;
+      }
+
+      .contact {
+        background: var(--accent);
+        color: var(--accent-ink);
+      }
+      .contact .in {
+        display: grid;
+        gap: 22px;
+        justify-items: start;
+      }
+      .contact h2 {
+        max-width: 18ch;
+      }
+      .contact p {
+        max-width: 52ch;
+        opacity: 0.92;
+        font-size: 18px;
+      }
+      .contact .btn {
+        border-color: var(--accent-ink);
+        color: var(--accent-ink);
+      }
+      .contact .btn.wa {
+        background: #fff;
+        color: #0a4d36;
+        border-color: #fff;
+      }
+      .num {
+        font:
+          500 20px/1 var(--mono),
+          monospace;
+        letter-spacing: 0.04em;
+        user-select: all;
+      }
+      footer .in {
+        padding-block: 26px;
+        font-size: 14px;
+        color: var(--muted);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        justify-content: space-between;
+      }
+
+      .mbar {
+        display: none;
+      }
+      @media (max-width: 640px) {
+        body {
+          font-size: 15px;
+          line-height: 1.45;
+          padding-bottom: 84px;
+        }
+        nav.top .in {
+          padding-block: 12px;
+        }
+        nav.top ul li:last-child a {
+          background: var(--fg);
+          color: var(--bg);
+          padding: 8px 16px;
+          border-radius: 99px;
+          font-weight: 700;
+          font-size: 14px;
+        }
+        .hero {
+          margin: 0 12px;
+          border-radius: 24px;
+          background: var(--accent);
+          color: var(--accent-ink);
+        }
+        .hero .in {
+          padding: 24px 18px 28px;
+          gap: 26px;
+        }
+        .hero .eyebrow {
+          color: var(--accent-ink);
+          opacity: 0.8;
+          font-size: 11px;
+          margin-bottom: 12px;
+        }
+        .hero h1 {
+          font-size: clamp(32px, 9.6vw, 40px);
+        }
+        .hero .lead {
+          color: var(--accent-ink);
+          opacity: 0.92;
+          font-size: 16px;
+          margin-top: 12px;
+        }
+        .tagline {
+          display: none;
+        }
+        .hero .btn.wa {
+          display: none;
+        }
+        .hero .btn.pri {
+          background: #fff;
+          border-color: #fff;
+          color: #0a4d36;
+          width: 100%;
+          justify-content: center;
+        }
+        .ctas {
+          margin-top: 20px;
+        }
+        .slipwrap {
+          justify-self: center;
+          transform: rotate(-1deg);
+          width: min(100%, 320px);
+        }
+        .slipcap {
+          display: none;
+        }
+        section {
+          padding-block: 32px;
+        }
+        section.alt {
+          border-block: 0;
+        }
+        .head {
+          margin-bottom: 16px;
+        }
+        .head p {
+          font-size: 15px;
+          margin-top: 8px;
+        }
+        h2 {
+          font-size: 25px;
+        }
+        .eyebrow {
+          margin-bottom: 10px;
+        }
+        .pains,
+        .demos,
+        .flow,
+        .prices {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          gap: 12px;
+          margin-inline: -16px;
+          padding: 18px 16px 10px;
+          border-top: 0;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+        }
+        .pains::-webkit-scrollbar,
+        .demos::-webkit-scrollbar,
+        .flow::-webkit-scrollbar,
+        .prices::-webkit-scrollbar {
+          display: none;
+        }
+        .pains > *,
+        .demos > *,
+        .flow > *,
+        .prices > * {
+          flex: 0 0 78%;
+          scroll-snap-align: center;
+        }
+        .pain {
+          background: var(--bg);
+          border: 1px solid var(--line);
+          border-radius: 16px;
+          padding: 18px;
+        }
+        .pain h3 {
+          margin: 8px 0 6px;
+          font-size: 19px;
+        }
+        .pain p {
+          font-size: 14px;
+        }
+        .shot {
+          height: 120px;
+        }
+        .demo .tx {
+          padding: 14px 16px 16px;
+          gap: 6px;
+        }
+        .demo .tx p {
+          font-size: 14px;
+        }
+        .tags {
+          display: none;
+        }
+        .flow li {
+          padding: 18px;
+        }
+        .flow li::before {
+          font-size: 34px;
+          margin-bottom: 6px;
+        }
+        .flow p {
+          font-size: 14px;
+        }
+        .plan {
+          padding: 20px 18px;
+          gap: 10px;
+        }
+        .plan .pr {
+          font-size: 30px;
+        }
+        .early {
+          font-size: 14px;
+          margin-top: 14px;
+        }
+        .note {
+          font-size: 13px;
+          margin-top: 6px;
+        }
+        .terms {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .terms div {
+          border-top: 0;
+          border-left: 3px solid var(--accent);
+          padding: 2px 0 2px 14px;
+        }
+        .terms h3 {
+          font-size: 17px;
+        }
+        .terms p {
+          font-size: 14px;
+        }
+        .days li {
+          grid-template-columns: 1fr;
+          gap: 2px;
+          padding-bottom: 18px;
+        }
+        .days p {
+          font-size: 14px;
+        }
+        .about {
+          gap: 24px;
+        }
+        .built li {
+          font-size: 14px;
+        }
+        .contact {
+          margin: 0 12px 16px;
+          border-radius: 24px;
+          padding-block: 32px;
+        }
+        .contact h2 {
+          max-width: none;
+        }
+        .contact p {
+          font-size: 15px;
+        }
+        .contact .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .num {
+          font-size: 17px;
+        }
+        footer .in {
+          padding-block: 14px;
+          font-size: 13px;
+        }
+        footer .in span:last-child {
+          display: none;
+        }
+        .mbar {
+          display: flex;
+          gap: 10px;
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 30;
+          background: var(--surface);
+          border-top: 1px solid var(--line);
+          padding: 10px max(14px, env(safe-area-inset-right, 0px))
+            calc(10px + env(safe-area-inset-bottom, 0px))
+            max(14px, env(safe-area-inset-left, 0px));
+        }
+        .mbar .btn {
+          flex: 1;
+          justify-content: center;
+          padding: 12px 10px;
+          font-size: 15px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+
+    <nav class="top">
+      <div class="in">
+        <a class="brand" href="#top">Subash<span>.</span></a>
+        <ul>
+          <li><a href="#demos">Demo stores</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#process">Delivery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="in">
+        <div>
+          <span class="eyebrow">Stores for Instagram and Facebook sellers</span>
+          <h1>
+            Turn your DMs into
+            <span class="mark">orders that arrive complete.</span>
+          </h1>
+          <p class="lead">
+            Customers pick items. You get one clean WhatsApp order.
+          </p>
+          <p class="tagline">Your orders, straight to WhatsApp.</p>
+          <div class="ctas">
+            <a class="btn pri" href="#demos">See the 3 demo stores</a
+            ><a
+              class="btn wa"
+              href="https://wa.me/923293997234?text=Assalam%20o%20Alaikum%20Subash%2C%20I%20saw%20your%20portfolio.%20I%20sell%20on%20Instagram%2FFacebook%20and%20want%20an%20order-ready%20store."
+              target="_blank"
+              rel="noopener"
+              >Message me on WhatsApp</a
+            >
+          </div>
+        </div>
+        <div>
+          <div class="slipwrap">
+            <div
+              class="slip"
+              aria-label="Example of the order message a seller receives"
+            >
+              <div class="hd"><span>ORDER RB-4821</span><span>COD</span></div>
+              1) Printed Lawn Suit (Stitched to size) x 1 = PKR 6,000<br />
+              2) Chiffon Dupatta x 2 = PKR 3,000
+              <hr />
+              <div class="tt"><span>Subtotal</span><span>PKR 9,000</span></div>
+              <div class="tt"><span>Delivery</span><span>Free</span></div>
+              <div class="tt">
+                <span>Total (COD)</span><span>PKR 9,000</span>
+              </div>
+              <hr />
+              Name: Ayesha Khan<br />Phone: 0300 1234567<br />City: Lahore<br />Address:
+              House 12, Street 4, Johar Town
+              <div class="ok">Please confirm my order.</div>
+            </div>
+          </div>
+          <p class="slipcap">What you receive on WhatsApp.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="alt" id="problem">
+      <div class="in">
+        <div class="head">
+          <span class="eyebrow">The problem with selling in DMs</span>
+          <h2>Chat is where orders get lost.</h2>
+        </div>
+        <div class="pains">
+          <div class="pain">
+            <span class="before">"Bhai address bhej dein"</span>
+            <h3>Incomplete orders</h3>
+            <p>Full details in one message.</p>
+          </div>
+          <div class="pain">
+            <span class="before">"Price? Size? Available?"</span>
+            <h3>The same questions all day</h3>
+            <p>Prices and sizes are on the page.</p>
+          </div>
+          <div class="pain">
+            <span class="before">"Order refused at the door"</span>
+            <h3>Unconfirmed COD orders</h3>
+            <p>Every customer confirms with a YES.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demos">
+      <div class="in">
+        <div class="head">
+          <span class="eyebrow">Demo stores</span>
+          <h2>Try a demo store.</h2>
+        </div>
+        <div class="demos">
+          <a class="demo" href="rang-boutique.html"
+            ><div class="shot s1"><img src="cover-rang-boutique.jpg" alt="Rang Boutique demo store preview" loading="lazy" width="800" height="400"><span class="lbl">Rang Boutique</span></div>
+            <div class="tx">
+              <div class="tags">
+                <span>Fashion</span><span>Sizes and options</span>
+              </div>
+              <h3>Lawn and formal wear</h3>
+              <p>Sizes and a cart.</p>
+              <span class="go">Open the demo &rarr;</span>
+            </div></a
+          >
+          <a class="demo" href="noor-jewels.html"
+            ><div class="shot s2"><img src="cover-noor-jewels.jpg" alt="Noor Jewels demo store preview" loading="lazy" width="800" height="400"><span class="lbl">Noor Jewels</span></div>
+            <div class="tx">
+              <div class="tags">
+                <span>Jewellery</span><span>Ring and bangle sizes</span>
+              </div>
+              <h3>Bridal and daily wear</h3>
+              <p>Size pickers.</p>
+              <span class="go">Open the demo &rarr;</span>
+            </div></a
+          >
+          <a class="demo" href="meetha-ghar.html"
+            ><div class="shot s3"><img src="cover-meetha-ghar.jpg" alt="Meetha Ghar demo store preview" loading="lazy" width="800" height="400"><span class="lbl">Meetha Ghar</span></div>
+            <div class="tx">
+              <div class="tags">
+                <span>Home food</span><span>Price by tray size</span>
+              </div>
+              <h3>Home cooked, delivered</h3>
+              <p>Price by tray size.</p>
+              <span class="go">Open the demo &rarr;</span>
+            </div></a
+          >
+        </div>
+        <p class="note">Demo brands are made up.</p>
+      </div>
+    </section>
+
+    <section class="alt" id="how">
+      <div class="in">
+        <div class="head">
+          <span class="eyebrow">How an order works</span>
+          <h2>Three steps, one message.</h2>
+        </div>
+        <ol class="flow">
+          <li>
+            <h3>Customer orders</h3>
+            <p>Items and address.</p>
+          </li>
+          <li>
+            <h3>You get a message</h3>
+            <p>Everything in one message.</p>
+          </li>
+          <li>
+            <h3>You confirm</h3>
+            <p>Tap one link, the customer replies YES, you dispatch.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="in">
+        <div class="head">
+          <span class="eyebrow">Pricing in PKR</span>
+          <h2>Simple pricing.</h2>
+        </div>
+        <div class="prices">
+          <div class="plan">
+            <h3>Launch Page</h3>
+            <div class="pr"><small>PKR</small>7,999</div>
+            <ul>
+              <li>Up to 10 products with a cart</li>
+              <li>One complete order on WhatsApp</li>
+              <li>Order sheet with stock count</li>
+            </ul>
+          </div>
+          <div class="plan best">
+            <h3>Order-Ready Store</h3>
+            <div class="pr"><small>PKR</small>19,999</div>
+            <ul>
+              <li>Up to 30 products</li>
+              <li>Cart that sends to WhatsApp</li>
+              <li>Full warehouse sheet and dashboard</li>
+            </ul>
+          </div>
+          <div class="plan">
+            <h3>Store + Automation</h3>
+            <div class="pr"><small>PKR</small>29,999</div>
+            <ul>
+              <li>Everything in Order-Ready</li>
+              <li>COD confirmation flow</li>
+              <li>Order updates and dashboard</li>
+            </ul>
+          </div>
+          <div class="plan">
+            <h3>Care Plan</h3>
+            <div class="pr">
+              <small>PKR</small>2,999<small class="per">per month</small>
+            </div>
+            <ul>
+              <li>Product updates</li>
+              <li>Fixes and improvements</li>
+              <li>Monthly report</li>
+            </ul>
+          </div>
+        </div>
+        <!-- <p class="early"><b>First 3 clients:</b> Launch Page for PKR 5,999.</p> -->
+      </div>
+    </section>
+
+    <section class="alt" id="terms">
+      <div class="in">
+        <div class="head">
+          <span class="eyebrow">Clear terms</span>
+          <h2>You know what you get before we start.</h2>
+        </div>
+        <div class="terms">
+          <div>
+            <h3>50% advance, 50% on handover</h3>
+            <p>Scope agreed in writing.</p>
+          </div>
+          <div>
+            <h3>You own the domain</h3>
+            <p>Domain costs PKR 2,500 to 5,000 a year.</p>
+          </div>
+          <div>
+            <h3>No sales promises</h3>
+            <p>I promise delivery and support, not sales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="in">
+        <div class="head">
+          <span class="eyebrow">Delivery in 7 days</span>
+          <h2>Live in 7 days.</h2>
+        </div>
+        <ol class="days">
+          <li>
+            <span class="d">DAY 1</span>
+            <p><b>Brief and products</b>Send logo, photos, prices.</p>
+          </li>
+          <li>
+            <span class="d">DAY 2 TO 4</span>
+            <p><b>Build</b>I build your store.</p>
+          </li>
+          <li>
+            <span class="d">DAY 5</span>
+            <p><b>Review</b>You test it.</p>
+          </li>
+          <li>
+            <span class="d">DAY 6</span>
+            <p><b>Fixes</b>I apply changes.</p>
+          </li>
+          <li>
+            <span class="d">DAY 7</span>
+            <p><b>Handover</b>Final payment, then live.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="alt" id="about">
+      <div class="in about">
+        <div>
+          <span class="eyebrow">About</span>
+          <h2>Built by a Professional Web Developer.</h2>
+          <p style="margin-top: 18px; color: var(--muted)">
+            I'm Subash. I build stores for real shops.
+          </p>
+        </div>
+        <ul class="built">
+          <li><b>JeweloraCraft</b>Jewellery store</li>
+          <li><b>JSK Creation</b>Jewellery and admin panel</li>
+          <li><b>Khaddi</b>Clothing store</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="in">
+        <h2>Send me your Instagram page.</h2>
+        <p>Tell me what you sell.</p>
+        <a
+          class="btn wa"
+          href="https://wa.me/923293997234?text=Assalam%20o%20Alaikum%20Subash%2C%20I%20saw%20your%20portfolio.%20My%20shop%20is..."
+          target="_blank"
+          rel="noopener"
+          >Message me on WhatsApp</a
+        >
+        <span class="num">+92 329 3997234</span>
+      </div>
+    </section>
+    <footer>
+      <div class="in">
+        <span>Subash, order-ready stores for Pakistani sellers.</span
+        ><span>Demo store brands are fictional.</span>
+      </div>
+    </footer>
+
+    <div class="mbar">
+      <a
+        class="btn wa"
+        href="https://wa.me/923293997234?text=Assalam%20o%20Alaikum%20Subash%2C%20I%20saw%20your%20portfolio."
+        target="_blank"
+        rel="noopener"
+        >WhatsApp me</a
+      ><a class="btn" href="#pricing">See prices</a>
+    </div>
+  </body>
+</html>
