@@ -1,0 +1,190 @@
+/* =====================================================================
+   motion.css  -  shared animation layer for Subash's portfolio + demo stores
+   - Everything is gated behind html.mo (added only when the visitor has NOT
+     asked their device for reduced motion, and removed again if anything fails).
+   - Only transform / opacity / clip-path are animated, so it stays smooth on
+     budget phones.
+   - Reveal animations use "backwards" fill so they never lock a transform and
+     hover effects keep working afterwards.
+   ===================================================================== */
+
+@property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+
+:root {
+  --mo-ease: cubic-bezier(.2, .8, .2, 1);
+  --mo-pop: cubic-bezier(.34, 1.56, .64, 1);
+  interpolate-size: allow-keywords;
+}
+html { scroll-padding-top: 72px; }
+
+/* ---------- scroll reveal ---------- */
+html.mo [data-rv]:not(.is-in),
+html.mo [data-rv-group] > *:not(.is-in) { opacity: 0; }
+
+html.mo [data-rv].is-in { animation: mo-up .9s var(--mo-ease) var(--d, 0s) backwards; }
+html.mo [data-rv="fade"].is-in  { animation-name: mo-fade; }
+html.mo [data-rv="zoom"].is-in  { animation-name: mo-zoom; }
+html.mo [data-rv="left"].is-in  { animation-name: mo-left; }
+html.mo [data-rv="right"].is-in { animation-name: mo-right; }
+html.mo [data-rv="spin"].is-in  { animation-name: mo-spin-in; animation-timing-function: var(--mo-pop); animation-duration: 1.1s; }
+html.mo [data-rv="clip"].is-in  { animation-name: mo-clip; animation-duration: 1.25s; }
+
+@keyframes mo-up      { from { opacity: 0; transform: translate3d(0, 34px, 0); } }
+@keyframes mo-fade    { from { opacity: 0; } }
+@keyframes mo-zoom    { from { opacity: 0; transform: scale(.92); } }
+@keyframes mo-left    { from { opacity: 0; transform: translate3d(-40px, 0, 0); } }
+@keyframes mo-right   { from { opacity: 0; transform: translate3d(40px, 0, 0); } }
+@keyframes mo-spin-in { from { opacity: 0; transform: scale(.8) rotate(-8deg); } }
+@keyframes mo-clip    { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes mo-pop     { from { opacity: 0; transform: scale(.2) rotate(-30deg); } }
+@keyframes mo-up-sm   { from { opacity: 0; transform: translate3d(0, 14px, 0); } }
+@keyframes mo-left-sm { from { opacity: 0; transform: translate3d(22px, 0, 0); } }
+
+/* ---------- headline word reveal ---------- */
+html.mo [data-split]:not([data-split-done]) { opacity: 0; }
+html.mo [data-split] .wi {
+  display: inline-block; opacity: 0;
+  transform: translate3d(0, .55em, 0); filter: blur(8px);
+}
+html.mo [data-split].is-in .wi {
+  opacity: 1; transform: none; filter: none;
+  animation: mo-word 1s var(--mo-ease) calc(var(--d, 0s) + var(--i) * 70ms) backwards;
+}
+@keyframes mo-word {
+  from { opacity: 0; transform: translate3d(0, .55em, 0) rotate(2deg); filter: blur(8px); }
+}
+
+/* ---------- per-character pop (stars etc.) ---------- */
+html.mo [data-chars] .ch { display: inline-block; }
+html.mo [data-chars]:not(.is-in) .ch { opacity: 0; }
+html.mo [data-chars].is-in .ch {
+  animation: mo-pop .6s var(--mo-pop) calc(var(--d, 0s) + var(--i) * 90ms) backwards;
+}
+
+/* ---------- scroll progress bar ---------- */
+.mo-bar {
+  position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 999;
+  transform-origin: 0 50%; transform: scaleX(0); pointer-events: none;
+  background: var(--mo-accent, var(--accent, currentColor));
+}
+
+/* ---------- buttons: press + shine sweep ---------- */
+html.mo .btn {
+  position: relative; overflow: hidden; isolation: isolate;
+  transition: transform .25s var(--mo-ease), filter .2s, box-shadow .25s, background .25s, color .25s;
+}
+html.mo .btn::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, .32) 50%, transparent 65%);
+  transform: translateX(-120%); transition: transform .8s var(--mo-ease);
+}
+html.mo .btn:hover::after { transform: translateX(120%); }
+html.mo .btn:active { transform: scale(.97); }
+
+/* ---------- sticky header (stores) ---------- */
+html.mo header.mo-sticky { position: sticky; top: 0; z-index: 35; transition: background .3s, box-shadow .3s; }
+html.mo header.mo-sticky.stuck {
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+/* animated nav underline (stores) */
+html.mo .top nav a { position: relative; }
+html.mo .top nav a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px;
+  background: var(--mo-accent, currentColor);
+  transform: scaleX(0); transform-origin: right; transition: transform .35s var(--mo-ease);
+}
+html.mo .top nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+html.mo .top nav a:hover { text-decoration: none; }
+
+/* ---------- 3D tilt / spotlight / magnet ---------- */
+html.mo [data-tilt] {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .3s var(--mo-ease);
+}
+html.mo .spot { position: relative; }
+html.mo .spot::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  opacity: 0; transition: opacity .35s;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--mo-glow, rgba(255, 255, 255, .12)), transparent 45%);
+}
+html.mo .spot:hover::after { opacity: 1; }
+html.mo [data-magnet] { transition: translate .45s var(--mo-ease), transform .25s var(--mo-ease), filter .2s; }
+
+/* ---------- store: cart feedback ---------- */
+html.mo .cartcount.bump { animation: mo-bump .55s var(--mo-pop); }
+html.mo .cartbtn.ping   { animation: mo-wiggle .6s ease; }
+@keyframes mo-bump   { 0% { transform: scale(1); } 40% { transform: scale(1.7); } 100% { transform: scale(1); } }
+@keyframes mo-wiggle { 20% { transform: rotate(-6deg); } 40% { transform: rotate(5deg); } 60% { transform: rotate(-3deg); } 80% { transform: rotate(2deg); } }
+
+.mo-fly {
+  position: fixed; left: 0; top: 0; z-index: 200; pointer-events: none; overflow: hidden;
+  border-radius: var(--radius, 12px); background: var(--surface, #fff);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .35); will-change: transform;
+}
+.mo-fly svg { width: 100%; height: 100%; display: block; }
+.mo-conf { position: fixed; left: 0; top: 0; z-index: 210; pointer-events: none; border-radius: 50%; will-change: transform; }
+
+/* ---------- store: product cards, chips, options ---------- */
+html.mo .card { transition: transform .35s var(--mo-ease), box-shadow .35s, border-color .3s; }
+html.mo .card:hover { transform: translateY(-6px); }
+html.mo .chip, html.mo .opt { transition: background .25s, color .25s, border-color .25s, transform .2s; }
+html.mo .chip:active, html.mo .opt:active { transform: scale(.95); }
+html.mo .obar.on { animation: mo-bar-in .5s var(--mo-ease); }
+@keyframes mo-bar-in { from { transform: translateY(100%); } }
+
+/* ---------- store: drawer, modal, toast ---------- */
+html.mo #drawer { transition: transform .55s var(--mo-ease), visibility 0s linear .55s; }
+html.mo #drawer.open { transition: transform .55s var(--mo-ease), visibility 0s; }
+html.mo #backdrop { transition: opacity .4s, backdrop-filter .4s, -webkit-backdrop-filter .4s; }
+html.mo #backdrop.open { -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+html.mo #drawer.enter .ln { animation: mo-left-sm .6s var(--mo-ease) backwards; animation-delay: calc(var(--k, 0) * 70ms + .2s); }
+html.mo #drawer.enter .ln:nth-child(1) { --k: 0; }
+html.mo #drawer.enter .ln:nth-child(2) { --k: 1; }
+html.mo #drawer.enter .ln:nth-child(3) { --k: 2; }
+html.mo #drawer.enter .ln:nth-child(4) { --k: 3; }
+html.mo #drawer.enter .ln:nth-child(5) { --k: 4; }
+html.mo #drawer.enter .ln:nth-child(n+6) { --k: 5; }
+html.mo #drawer.enter .dfoot { animation: mo-up-sm .6s var(--mo-ease) .3s backwards; }
+
+html.mo #modal.open .mbox { animation: mo-sheet .55s var(--mo-ease); }
+html.mo #modal.open .mart svg { animation: mo-kb-out 1.4s var(--mo-ease); }
+@keyframes mo-sheet { from { opacity: 0; transform: translateY(44px) scale(.97); } }
+@keyframes mo-sheet-m { from { transform: translateY(100%); } }
+@keyframes mo-kb-out { from { transform: scale(1.18); } }
+@media (max-width: 720px) { html.mo #modal.open .mbox { animation-name: mo-sheet-m; } }
+
+html.mo #toast { transition: opacity .3s, transform .55s var(--mo-pop); }
+
+/* ---------- native <details> open/close (Chrome/Edge/Safari 18+, ignored elsewhere) ---------- */
+html.mo details::details-content {
+  block-size: 0; overflow: clip;
+  transition: block-size .4s var(--mo-ease), content-visibility .4s allow-discrete;
+}
+html.mo details[open]::details-content { block-size: auto; }
+
+/* ---------- shared keyframes for page-specific CSS ---------- */
+@keyframes mo-bob     { 50% { translate: 0 -10px; } }
+@keyframes mo-shimmer { from { background-position: 120% 0; } to { background-position: -130% 0; } }
+@keyframes mo-sweep   { 0% { transform: translateX(-120%); } 30%, 100% { transform: translateX(120%); } }
+@keyframes mo-kb      { to { transform: scale(1.12); } }
+@keyframes mo-marq    { to { transform: translateX(-50%); } }
+@keyframes mo-grad    { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+/* ---------- sparkles (jewellery) ---------- */
+.mo-sp {
+  position: absolute; width: var(--s, 10px); height: var(--s, 10px); pointer-events: none; opacity: 0;
+  background: var(--mo-sparkle, #fff);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  animation: mo-twinkle var(--t, 3s) ease-in-out var(--dl, 0s) infinite;
+}
+@keyframes mo-twinkle {
+  0%, 100% { opacity: 0; transform: scale(.2) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(45deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mo-sp, .mo-bar { display: none; }
+}
